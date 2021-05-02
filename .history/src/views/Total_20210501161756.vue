@@ -1,0 +1,31 @@
+<template>
+  <div>
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-12" v-if="juegos">
+           <total :leyenda="total" />
+        </div>
+        <div class="col-12" v-else>
+          <h2>No es posible traer los juegos</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import MostrarVentas from "@/components/MostrarVentas.vue";
+import { mapState } from "vuex";
+export default {
+
+  components: {
+    MostrarVentas,
+  },
+
+  computed: {
+    ...mapState(["juegos"]),
+  },
+};
+</script>
+
